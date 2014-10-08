@@ -10,7 +10,7 @@ Best explained by some examples:
 Count the number of wednesdays in a period:
 ```
 var stream = new DayStream(new DateTime(2013, 2, 1), new DateTime(2013, 2, 28));
-stream.Where(d => d.DayOfWeek == DayOfWeek.Wednesday);
+stream.Count(d => d.DayOfWeek == DayOfWeek.Wednesday);
 ```
 
 Reason with "infinite" periods:
