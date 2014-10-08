@@ -1,6 +1,6 @@
 DayStream
 =========
-Reasoning with days using LINQ!
+Reasoning with days in C# using LINQ!
 -----------
 
 The DayStream class implements IEnumerable<DateTime> and can be used reason with days using LINQ and lambda expressions.
