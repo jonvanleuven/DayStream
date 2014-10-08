@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace JonVanLeuven.Stream
+namespace JonVanLeuven
 {
     public class DayStream : IEnumerable<DateTime>
     {
@@ -89,14 +89,29 @@ namespace JonVanLeuven.Stream
             return stream.Any() ? stream.First() : (DateTime?)null;
         }
 
+        public static DateTime? FirstOrDefault(this IEnumerable<DateTime> stream, Func<DateTime, bool> predicate)
+        {
+            return stream.Any(predicate) ? stream.First(predicate) : (DateTime?)null;
+        }
+
         public static DateTime? LastOrDefault(this IEnumerable<DateTime> stream)
         {
             return stream.Any() ? stream.Last() : (DateTime?)null;
         }
 
+        public static DateTime? LastOrDefault(this IEnumerable<DateTime> stream, Func<DateTime, bool> predicate)
+        {
+            return stream.Any(predicate) ? stream.Last(predicate) : (DateTime?)null;
+        }
+
         public static DateTime? SingleOrDefault(this IEnumerable<DateTime> stream)
         {
             return stream.Any() ? stream.Single() : (DateTime?)null;
+        }
+
+        public static DateTime? SingleOrDefault(this IEnumerable<DateTime> stream, Func<DateTime, bool> predicate)
+        {
+            return stream.Any(predicate) ? stream.Single(predicate) : (DateTime?)null;
         }
     }
 }

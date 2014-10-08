@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
-using JonVanLeuven.DayStreamTest;
 using NUnit.Framework;
 
-namespace JonVanLeuven.Stream
+namespace JonVanLeuven.DayStreamTest
 {
     [TestFixture]
     public class DayStreamTest
@@ -80,6 +79,15 @@ namespace JonVanLeuven.Stream
             Assert.AreEqual(1, p.Count());
             Assert.AreEqual(new DateTime(2010, 1, 1), p.First());
             Assert.AreEqual(new DateTime(2010, 1, 1), p.Last());
+        }
+
+        [Test]
+        public void FirstOrDefault()
+        {
+            var dag = new DateTime(2010, 1, 1);
+            var p = new DayStream(dag, dag).FirstOrDefault(d => false);
+
+            Assert.False(p.HasValue);
         }
     }
 }
