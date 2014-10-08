@@ -86,32 +86,38 @@ namespace JonVanLeuven
     {
         public static DateTime? FirstOrDefault(this IEnumerable<DateTime> stream)
         {
-            return stream.Any() ? stream.First() : (DateTime?)null;
+            var result = Enumerable.FirstOrDefault(stream);
+            return result != default(DateTime) ? result : (DateTime?)null;
         }
 
         public static DateTime? FirstOrDefault(this IEnumerable<DateTime> stream, Func<DateTime, bool> predicate)
         {
-            return stream.Any(predicate) ? stream.First(predicate) : (DateTime?)null;
+            var result = Enumerable.FirstOrDefault(stream, predicate);
+            return result != default(DateTime) ? result : (DateTime?)null;
         }
 
         public static DateTime? LastOrDefault(this IEnumerable<DateTime> stream)
         {
-            return stream.Any() ? stream.Last() : (DateTime?)null;
+            var result = Enumerable.LastOrDefault(stream);
+            return result != default(DateTime) ? result : (DateTime?)null;
         }
 
         public static DateTime? LastOrDefault(this IEnumerable<DateTime> stream, Func<DateTime, bool> predicate)
         {
-            return stream.Any(predicate) ? stream.Last(predicate) : (DateTime?)null;
+            var result = Enumerable.LastOrDefault(stream, predicate);
+            return result != default(DateTime) ? result : (DateTime?)null;
         }
 
         public static DateTime? SingleOrDefault(this IEnumerable<DateTime> stream)
         {
-            return stream.Any() ? stream.Single() : (DateTime?)null;
+            var result = Enumerable.SingleOrDefault(stream);
+            return result != default(DateTime) ? result : (DateTime?)null;
         }
 
         public static DateTime? SingleOrDefault(this IEnumerable<DateTime> stream, Func<DateTime, bool> predicate)
         {
-            return stream.Any(predicate) ? stream.Single(predicate) : (DateTime?)null;
+            var result = Enumerable.SingleOrDefault(stream, predicate);
+            return result != default(DateTime) ? result : (DateTime?)null;
         }
     }
 }
