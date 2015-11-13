@@ -81,43 +81,4 @@ namespace JonVanLeuven
             }
         }
     }
-
-    public static class DayStreamExtensions
-    {
-        public static DateTime? FirstOrDefault(this IEnumerable<DateTime> stream)
-        {
-            var result = Enumerable.FirstOrDefault(stream);
-            return result != default(DateTime) ? result : (DateTime?)null;
-        }
-
-        public static DateTime? FirstOrDefault(this IEnumerable<DateTime> stream, Func<DateTime, bool> predicate)
-        {
-            var result = Enumerable.FirstOrDefault(stream, predicate);
-            return result != default(DateTime) ? result : (DateTime?)null;
-        }
-
-        public static DateTime? LastOrDefault(this IEnumerable<DateTime> stream)
-        {
-            var result = Enumerable.LastOrDefault(stream);
-            return result != default(DateTime) ? result : (DateTime?)null;
-        }
-
-        public static DateTime? LastOrDefault(this IEnumerable<DateTime> stream, Func<DateTime, bool> predicate)
-        {
-            var result = Enumerable.LastOrDefault(stream, predicate);
-            return result != default(DateTime) ? result : (DateTime?)null;
-        }
-
-        public static DateTime? SingleOrDefault(this IEnumerable<DateTime> stream)
-        {
-            var result = Enumerable.SingleOrDefault(stream);
-            return result != default(DateTime) ? result : (DateTime?)null;
-        }
-
-        public static DateTime? SingleOrDefault(this IEnumerable<DateTime> stream, Func<DateTime, bool> predicate)
-        {
-            var result = Enumerable.SingleOrDefault(stream, predicate);
-            return result != default(DateTime) ? result : (DateTime?)null;
-        }
-    }
 }
